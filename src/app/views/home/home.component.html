@@ -1,0 +1,17 @@
+<h2>Aqui você encontra tudo que precisa para sua linha!</h2>
+
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-around center">
+  <mat-card
+    *ngFor="let item of opcoes; let last = last"
+    [routerLink]="item.urlLink"
+    [ngClass.gt-sm]="last ? 'me-0 mb-0' : 'me-3 mb-0'"
+    [ngClass.gt-xs]="last ? 'mb-0' : 'mb-3'"
+  >
+    <div class="px-2">
+      <mat-card-title class="mb-2">{{ item.titulo }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ item.descricao }}</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>
